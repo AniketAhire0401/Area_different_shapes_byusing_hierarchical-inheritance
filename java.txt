@@ -1,0 +1,151 @@
+package homework;
+import java.util.*;
+
+class Shape
+{
+	
+	double length,breadth,base,height,radius,side,A,B;
+	double pi=3.14,Area_of_Reactangle,Area_of_Triangle,Area_of_Ellipse,Area_of_Square,Area_of_Circle;
+	
+	Scanner sc = new Scanner(System.in);
+	
+//	Area_of_Reactangle=length*breadth;
+//	Area_of_Triangle=(base*height)/2;
+//	Area_of_Ellipse=pi*A*B;
+//	Area_of_Circle=pi*r*r;
+//	Area_of_Square=side*side;
+}
+
+class Reactangle extends Shape
+{
+	 	 	double Area_of_Reactangle(double length , double breadth)
+	 	 	{
+	 	 		System.out.print("\nEnter length  : ");
+	 	 		length=sc.nextDouble();
+	 	 		System.out.print("Enter breadth :");
+	 	 		breadth=sc.nextDouble();
+	 	 		Area_of_Reactangle=length*breadth;
+	 	 		System.out.println("\nArea of Reactangle = "+ Area_of_Reactangle +" sqcm");
+	 	 		return Area_of_Reactangle;
+	 	 	}
+	
+}
+
+class Triangle extends Shape
+{
+			double Area_of_Triangle(double base , double height)
+			{
+				System.out.print("\nEnter Base   : ");
+				base=sc.nextDouble();
+				System.out.print("Enter Height : ");
+				height=sc.nextDouble();
+				Area_of_Triangle=(base*height)/2;
+				System.out.println("\nArea of Triangle : "+ Area_of_Triangle +" sqcm");
+				return Area_of_Triangle;
+			}
+	
+}
+
+class Ellipse extends Shape
+{
+			double Area_of_Ellipse(double A , double B)
+			{
+				System.out.print("\nEnter Value of A : ");
+				A=sc.nextDouble();
+				System.out.print("Enter value of B : ");
+				B=sc.nextDouble();
+				Area_of_Ellipse=pi*A*B;
+				System.out.println("\nArea of Ellipse : "+Area_of_Ellipse+" sqcm");
+				return Area_of_Ellipse;
+			}
+	
+}
+
+class Square extends Reactangle
+{
+			double Area_of_Square(double side)
+			{
+				System.out.print("\nEnter Side : ");
+				side=sc.nextDouble();
+				Area_of_Square=side*side;
+				System.out.println("\nArea of Square : "+Area_of_Square+" sqcm");
+				return Area_of_Square;
+			}
+	
+}
+
+class Circle extends Ellipse
+{
+			double Area_of_Circle(double radius)
+			{
+				System.out.print("\nEnter the Radius : ");
+				radius=sc.nextDouble();
+				Area_of_Circle=pi*radius*radius;
+				System.out.println("\nArea of Circe : "+Area_of_Circle+" sqcm");
+				
+				return Area_of_Circle;
+			}
+	
+}
+public class Area {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Square sq = new Square();
+		Circle cir = new Circle();
+		Triangle tr= new Triangle();
+int ch;
+		
+
+		do {
+			System.out.println("\n------------------------");
+			System.out.println("1.Area of Reactangle ");
+			System.out.println("2.Area of Triangle ");
+			System.out.println("3.Area of Ellipse ");
+			System.out.println("4.Area of Square ");
+			System.out.println("5.Area of Circle ");
+			System.out.println("6.Exit ");
+			System.out.println("------------------------\n");
+			
+			
+			System.out.print("Enter Your Choice : ");
+			ch=sc.nextInt();
+	
+			switch(ch)
+			{
+				case 1:
+					sq.Area_of_Reactangle(sq.length,sq.breadth);
+					break;
+				case 2:
+					tr.Area_of_Triangle(tr.base, tr.height);
+					break;
+				case 3:
+					cir.Area_of_Ellipse(cir.A, cir.B);
+					break;
+				case 4:
+					sq.Area_of_Square(sq.side);
+					break;
+				case 5:
+					cir.Area_of_Circle(cir.radius);
+					break;
+				case 6:
+					System.out.println("Succesfully Exit....");
+					break;
+				default:
+					System.out.println("Enter Correct Choice");
+					
+		
+			}
+		}while(ch!=6);
+		
+		
+
+	}
+
+		
+		
+
+	}
+
+
